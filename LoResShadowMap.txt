@@ -1,0 +1,19 @@
+When I have found out a very nice way in the SIGGRAPH documents to render decals, texts and vector graphics in low resulution textures it was great.
+
+Later I have been thinking: "hmm if this works so greatly, and usually shadow map textures are low-poly why there is no solution to generate shadow maps utilizing these stuff?"
+
+Basically the text and vector rendering works as follows:
+- The textures does not contain the full shape or glyphs, but also contain blurry-looking edges.
+- These edges are blurry in a way so that the blur is generated with knowlegde of the GPU filtering methods
+- So basically we generate artifacts in the source texture so the result can be really sharp when it goes through the GPU hardware ;-)
+
+This does not work well with colours and with general figures, but with text and "vector graphics" it works well.
+
+HOWEVER! - here is the spin - I think shadow maps are really great for this purpuse and might be generated like these texts!
+
+See the original decal / textz technique here:
+  https://blog.mapbox.com/drawing-text-with-signed-distance-fields-in-mapbox-gl-b0933af6f817
+and here:
+  http://www.valvesoftware.com/publications/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf
+  
+I kind of feel it would work well with hard shadows...
