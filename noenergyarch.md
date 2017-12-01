@@ -1,3 +1,6 @@
+Idea Overview
+=============
+
 An embedded Computer Architecture ideas that work forward
 a goal when power is available and stop working when not.
 
@@ -20,3 +23,8 @@ Basically it is just about some certain philosophies:
 * Ask-to-download-communications: When senders want the system to get some data over a network it is much better to just tell them in very small messages where the data is and let the embedded system download it using redoable operations internally. This way only the small message can get lost, for which there is only a small chance.
 
 This is a very tricky architecture, most easily implemented by a custom microcontroller firmware that ensures all the above (and more) rules by acting as an interpreter over a ferroelectric or similar memory.
+
+Good descriptions and links:
+============================
+
+https://en.wikipedia.org/wiki/Immunity-aware_programming
